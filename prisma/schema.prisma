@@ -1,0 +1,67 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Tournament {
+  id              String        @id @default(cuid())
+  title           String
+  date            DateTime
+  location        String
+  format          String
+  description     String
+  price           Float
+  maxParticipants Int?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  registrations   Registration[]
+}
+
+model Registration {
+  id           String      @id @default(cuid())
+  playerName   String
+  email        String
+  phone        String?
+  handicap     Float?
+  teamName     String?
+  tournamentId String
+  tournament   Tournament  @relation(fields: [tournamentId], references: [id])
+  payment      Payment?
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+}
+
+model Payment {
+  id             String       @id @default(cuid())
+  amount         Float
+  stripePaymentId String      @unique
+  registrationId String       @unique
+  registration   Registration @relation(fields: [registrationId], references: [id])
+  status         String       @default("pending") // pending, completed, failed
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+}
+
+model Admin {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Subscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

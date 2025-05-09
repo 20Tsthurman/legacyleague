@@ -66,7 +66,7 @@ export default function Home() {
       date: 'May 15-16, 2025',
       location: 'Bowling Green Country Club',
       price: '$200',
-      image: 'https://placehold.co/800x600/001f3f/ffffff?text=Spring+Championship',
+      image: '/images/tournaments/spring-championship.jpg', // Updated path
       featured: true
     },
     {
@@ -75,7 +75,7 @@ export default function Home() {
       date: 'June 22-23, 2025',
       location: 'Riverview Golf Course',
       price: '$175',
-      image: 'https://placehold.co/800x600/003366/ffffff?text=Summer+Classic'
+      image: '/images/tournaments/summer-classic.jpg' // Updated path
     },
     {
       id: 'fall-invitational',
@@ -83,7 +83,7 @@ export default function Home() {
       date: 'September 10-11, 2025',
       location: 'Pine Ridge Golf Club',
       price: '$225',
-      image: 'https://placehold.co/800x600/004d40/ffffff?text=Fall+Invitational'
+      image: '/images/tournaments/fall-invitational.jpg' // Updated path
     }
   ];
   
@@ -114,7 +114,7 @@ export default function Home() {
         <motion.div 
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{ 
-            backgroundImage: 'url("https://placehold.co/1920x1080/001f3f/ffffff?text=Professional+Golf+Course")',
+            backgroundImage: 'url("/images/hero.jpg")',
             y: heroInView ? y : 0
           }}
         >
@@ -211,10 +211,10 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <Image
-                src="https://placehold.co/600x700/f8fafc/a3a3a3?text=Legacy+Golf+Experience"
+                src="/images/intro-experience.png"
+                width={1800}
+                height={1200}
                 alt="Golf Experience"
-                width={600}
-                height={700}
                 className="w-full h-auto rounded-lg shadow-lg object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -405,8 +405,8 @@ export default function Home() {
             {[
               { number: "28", label: "Tournaments" },
               { number: "12", label: "Premium Courses" },
-              { number: "800+", label: "Active Members" },
-              { number: "$250K+", label: "Prize Money" }
+              { number: "100+", label: "Active Members" },
+              { number: "$10k+", label: "Prize Money" }
             ].map((stat, index) => (
               <motion.div 
                 key={index}

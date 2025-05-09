@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -29,8 +30,14 @@ const MainLayout = ({ children }: MainLayoutProps) => {
         <div className="container mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-3">
-              <div className={`h-12 w-12 rounded-full flex items-center justify-center ${scrolled ? 'bg-gray-900' : 'bg-white'}`}>
-                <span className={`font-bold text-xl ${scrolled ? 'text-white' : 'text-gray-900'}`}>LGA</span>
+              <div className={`h-12 w-12 rounded-full overflow-hidden ${scrolled ? 'bg-gray-900' : 'bg-white'}`}>
+                <Image
+                  src="/images/Main Logo.PNG"
+                  alt="Legacy Golf Association logo"
+                  width={48}
+                  height={48}
+                  className="object-cover"
+                />
               </div>
               <span className={`font-serif text-xl font-medium tracking-wide ${scrolled ? 'text-gray-900' : 'text-white'}`}>
                 LEGACY GOLF ASSOCIATION
@@ -97,7 +104,9 @@ const MainLayout = ({ children }: MainLayoutProps) => {
               <div className="flex justify-between items-center mb-10">
                 <div className="flex items-center gap-2">
                   <div className="h-8 w-8 rounded-full bg-gray-900 flex items-center justify-center">
-                    <span className="font-bold text-sm text-white">LGA</span>
+                    <div className="rounded-full overflow-hidden">
+                      <Image src="/images/Main Logo2.PNG" alt="Legacy Golf Association logo" width={32} height={32} className="object-cover" />
+                    </div>
                   </div>
                   <span className="font-serif text-base font-medium">LEGACY GOLF</span>
                 </div>

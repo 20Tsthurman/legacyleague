@@ -66,7 +66,7 @@ export default function Home() {
       date: 'May 15-16, 2025',
       location: 'Bowling Green Country Club',
       price: '$200',
-      image: '/images/tournaments/spring-championship.jpg', // Updated path
+      image: '/images/spring-championship.png', // Updated path
       featured: true
     },
     {
@@ -75,7 +75,7 @@ export default function Home() {
       date: 'June 22-23, 2025',
       location: 'Riverview Golf Course',
       price: '$175',
-      image: '/images/tournaments/summer-classic.jpg' // Updated path
+      image: '/images/summer-classic.jpeg' // Updated path
     },
     {
       id: 'fall-invitational',
@@ -83,7 +83,7 @@ export default function Home() {
       date: 'September 10-11, 2025',
       location: 'Pine Ridge Golf Club',
       price: '$225',
-      image: '/images/tournaments/fall-invitational.jpg' // Updated path
+      image: '/images/fall-invitational.jpg' // Updated path
     }
   ];
   
@@ -241,7 +241,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <Image
-                src="https://placehold.co/800x600/001f3f/ffffff?text=Spring+Championship"
+                src="/images/spring-championship.png"
                 alt="Spring Championship"
                 width={800}
                 height={600}

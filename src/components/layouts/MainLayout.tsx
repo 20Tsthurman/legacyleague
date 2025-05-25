@@ -150,11 +150,16 @@ const MainLayout = ({ children }: MainLayoutProps) => {
       {/* Footer */}
       <footer className="bg-gray-900 text-white">
         <div className="container mx-auto px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-            <div className="col-span-1 md:col-span-2">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10">            <div className="col-span-1 md:col-span-2">
               <div className="flex items-center gap-3 mb-6">
-                <div className="h-10 w-10 rounded-full bg-white flex items-center justify-center">
-                  <span className="font-bold text-lg text-gray-900">LGA</span>
+                <div className="h-10 w-10 rounded-full overflow-hidden">
+                  <Image 
+                    src="/images/Main Logo.png" 
+                    alt="Legacy Golf Association Logo" 
+                    width={40} 
+                    height={40}
+                    className="object-cover w-full h-full"
+                  />
                 </div>
                 <span className="font-serif text-xl font-medium tracking-wide text-white">
                   LEGACY GOLF ASSOCIATION
